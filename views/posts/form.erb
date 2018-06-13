@@ -1,0 +1,15 @@
+<form action= "/<%=@pages[:id]%>" method="post">
+  <div>
+    <label>Title</label>
+    <input type="text" name="title" placeholder="" value="<%= @pages[:title]%>">
+  </div>
+  <div>
+    <label>Description</label>
+    <textarea name="body" rows="8" cols="80" placeholder="Enter a description for your post" ><%= @pages[:body]%></textarea>
+  </div>
+  <input type="submit" value="submit">
+
+  <% if @pages[:id] != "" %>
+  <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>
